@@ -10,7 +10,7 @@ sysbench oltp_read_write \
 --db-driver=mysql \
 prepare
 
-sysbench oltp.lua \
+sysbench oltp_read_write \
 --table-size=1000000 \
 --mysql-db=my_database \
 --mysql-user=app_user \
@@ -20,7 +20,7 @@ sysbench oltp.lua \
 --db-driver=mysql \
 run
 
-sysbench oltp.lua \
+sysbench oltp_read_write \
 --table-size=1000000 \
 --mysql-db=my_database \
 --mysql-user=app_user \
