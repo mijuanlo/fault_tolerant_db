@@ -1,7 +1,14 @@
 #!/bin/bash
 
-SLEEPTIME=30
+SLEEPTIME=60
 DETACHED=0
+
+abort(){
+    echo Exitting...
+    exit 1
+}
+
+trap abort INT;
 
 cd ../
 echo "Stopping dockers..."
@@ -15,7 +22,7 @@ if [[ $(docker ps -a -q) ]]; then
 fi
 echo "Starting docker compose..."
 if [ "x${DETACHED}" = "x0" ];then
-    docker-compose up 
+    docker-compose up &
 else
     docker-compose up -d
 fi
