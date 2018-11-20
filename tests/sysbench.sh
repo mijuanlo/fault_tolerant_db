@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 sysbench oltp_read_write \
 --table-size=100 \
